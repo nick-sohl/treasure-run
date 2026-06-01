@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/btn_left.svg" id="1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/btn_right.svg" id="2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/btn_jump.svg" id="3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/btn_shoot.svg" id="4"]
+
+[sub_resource type="CircleShape2D" id="5"]
+radius = 56.0
+
+[node name="TouchControls" type="CanvasLayer"]
+
+[node name="BtnLeft" type="TouchScreenButton" parent="."]
+position = Vector2(30, 490)
+texture = ExtResource("1")
+shape = SubResource("5")
+action = "move_left"
+passby_press = true
+visibility_mode = 0
+
+[node name="BtnRight" type="TouchScreenButton" parent="."]
+position = Vector2(170, 490)
+texture = ExtResource("2")
+shape = SubResource("5")
+action = "move_right"
+passby_press = true
+visibility_mode = 0
+
+[node name="BtnJump" type="TouchScreenButton" parent="."]
+position = Vector2(950, 400)
+texture = ExtResource("3")
+shape = SubResource("5")
+action = "jump"
+passby_press = false
+visibility_mode = 0
+
+[node name="BtnShoot" type="TouchScreenButton" parent="."]
+position = Vector2(1010, 510)
+texture = ExtResource("4")
+shape = SubResource("5")
+action = "shoot"
+passby_press = false
+visibility_mode = 0
