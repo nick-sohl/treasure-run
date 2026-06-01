@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/player/Player.tscn" id="1"]
+[ext_resource type="Script" path="res://scenes/level/level.gd" id="2"]
+[ext_resource type="TileSet" path="res://assets/tiles/tileset.tres" id="3"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/Enemy.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://scenes/items/Crate.tscn" id="5"]
+[ext_resource type="PackedScene" path="res://scenes/level/ExitDoor.tscn" id="6"]
+[ext_resource type="PackedScene" path="res://scenes/ui/HUD.tscn" id="7"]
+[ext_resource type="PackedScene" path="res://scenes/ui/TouchControls.tscn" id="9"]
+
+[sub_resource type="RectangleShape2D" id="106"]
+size = Vector2(4000, 64)
+
+[node name="Level" type="Node2D"]
+script = ExtResource("2")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_set = ExtResource("3")
+
+[node name="Killzone" type="Area2D" parent="."]
+position = Vector2(576, 700)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+shape = SubResource("106")
+
+[node name="Player" parent="." instance=ExtResource("1")]
+position = Vector2(160, 88)
+
+[node name="Enemy" parent="." instance=ExtResource("4")]
+position = Vector2(768, 200)
+
+[node name="AmmoCrate" parent="." instance=ExtResource("5")]
+position = Vector2(448, 226)
+
+[node name="KeyCrate" parent="." instance=ExtResource("5")]
+position = Vector2(800, 290)
+crate_type = 1
+
+[node name="ExitDoor" parent="." instance=ExtResource("6")]
+position = Vector2(960, 480)
+
+[node name="HUD" parent="." instance=ExtResource("7")]
+
+[node name="TouchControls" parent="." instance=ExtResource("9")]
+
+[node name="WinScreen" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Label" type="Label" parent="WinScreen"]
+offset_left = 200.0
+offset_top = 250.0
+offset_right = 950.0
+offset_bottom = 400.0
+text = "LEVEL CLEAR!"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 72
