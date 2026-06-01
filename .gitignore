@@ -1,3 +1,6 @@
+# Private notes (not for version control)
+docs/notes/
+
 # Godot 4.2+ specific ignores
 ~*.dll
 
