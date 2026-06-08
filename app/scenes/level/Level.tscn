@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=3]
+[gd_scene format=4 uid="uid://c35lslh8gew2w"]
 
 [ext_resource type="PackedScene" path="res://scenes/player/Player.tscn" id="1"]
-[ext_resource type="Script" path="res://scenes/level/level.gd" id="2"]
-[ext_resource type="TileSet" path="res://assets/tiles/tileset.tres" id="3"]
+[ext_resource type="Script" uid="uid://nahmcvhcoq14" path="res://scenes/level/level.gd" id="2"]
+[ext_resource type="TileSet" uid="uid://dnmpw12ofcfrs" path="res://assets/tiles/tileset.tres" id="3"]
 [ext_resource type="PackedScene" path="res://scenes/enemies/Enemy.tscn" id="4"]
 [ext_resource type="PackedScene" path="res://scenes/items/Crate.tscn" id="5"]
 [ext_resource type="PackedScene" path="res://scenes/level/ExitDoor.tscn" id="6"]
@@ -10,48 +10,62 @@
 [ext_resource type="PackedScene" path="res://scenes/ui/TouchControls.tscn" id="9"]
 
 [sub_resource type="RectangleShape2D" id="106"]
-size = Vector2(4000, 64)
+size = Vector2(6551, 64)
 
-[node name="Level" type="Node2D"]
+[node name="Level" type="Node2D" unique_id=1318927571]
 script = ExtResource("2")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=574979539]
+tile_map_data = PackedByteArray("AAAHAPz/AQAAAAAAAAAIAPz/AQAAAAAAAAAJAPz/AQAAAAAAAAAKAPz/AQAAAAAAAAAMAPv/AQAAAAAAAAANAPv/AQAAAAAAAAAOAPv/AQAAAAAAAAAHAP3/AQADAAAAAAAIAP3/AQADAAAAAAAJAP3/AQADAAAAAAAKAP3/AQADAAAAAAAMAPz/AQADAAAAAAANAPz/AQADAAAAAAAOAPz/AQADAAAAAAARAPz/AQAAAAAAAAASAPz/AQAAAAAAAAATAPz/AQAAAAAAAAAUAPz/AQAAAAAAAAAVAPz/AQAAAAAAAAAWAPz/AQAAAAAAAAARAP3/AQADAAAAAAASAP3/AQADAAAAAAATAP3/AQADAAAAAAAUAP3/AQADAAAAAAAVAP3/AQADAAAAAAAWAP3/AQADAAAAAAAYAPv/AQAAAAAAAAAZAPv/AQAAAAAAAAAaAPv/AQAAAAAAAAAbAPv/AQAAAAAAAAAcAPv/AQAAAAAAAAAYAPz/AQADAAAAAAAZAPz/AQADAAAAAAAaAPz/AQADAAAAAAAbAPz/AQADAAAAAAAcAPz/AQADAAAAAAAfAPn/AQAAAAAAAAAeAPr/AQAAAAAAAAAeAPv/AQADAAAAAAAfAPv/AQADAAAAAAAfAPr/AQADAAAAAAAaAPf/AQAAAAAAAAAaAPj/AQADAAAAAAAZAPj/AQADAAAAAAAbAPj/AQAAAAAAAAAZAPf/AQAAAAAAAAAYAPb/AQAAAAAAAAAYAPf/AQADAAAAAAAYAPj/AQADAAAAAAAUAPb/AQAAAAAAAAATAPb/AQAAAAAAAAASAPb/AQAAAAAAAAAUAPf/AQADAAAAAAATAPf/AQADAAAAAAASAPf/AQADAAAAAAAQAPX/AQAAAAAAAAAPAPX/AQAAAAAAAAAOAPX/AQAAAAAAAAAOAPb/AQADAAAAAAAPAPb/AQADAAAAAAAQAPb/AQADAAAAAAARAPf/AQADAAAAAAARAPb/AQAAAAAAAAANAPX/AQAAAAAAAAANAPb/AQADAAAAAAAKAPT/AQAAAAAAAAAKAPX/AQADAAAAAAAJAPP/AQAAAAAAAAAIAPL/AQAAAAAAAAAHAPH/AQAAAAAAAAAJAPT/AQADAAAAAAAIAPP/AQADAAAAAAAHAPL/AQADAAAAAAALAPD/AQAAAAAAAAAMAPD/AQAAAAAAAAANAPD/AQAAAAAAAAAOAO//AQAAAAAAAAAQAO//AQAAAAAAAAAPAO//AQAAAAAAAAALAPH/AQADAAAAAAAMAPH/AQADAAAAAAANAPH/AQADAAAAAAAOAPD/AQADAAAAAAAPAPD/AQADAAAAAAAQAPD/AQADAAAAAAATAO7/AQAAAAAAAAAUAO7/AQAAAAAAAAAVAO7/AQAAAAAAAAATAO//AQADAAAAAAAUAO//AQADAAAAAAAVAO//AQADAAAAAAAZAO7/AQADAAAAAAAaAO7/AQADAAAAAAAbAO7/AQADAAAAAAAcAO7/AQADAAAAAAAdAO7/AQADAAAAAAAZAO3/AQAAAAAAAAAaAO3/AQAAAAAAAAAbAO3/AQAAAAAAAAAcAO3/AQAAAAAAAAAdAO3/AQAAAAAAAAAiAPr/AQAAAAAAAAAjAPr/AQAAAAAAAAAkAPr/AQAAAAAAAAAnAPv/AQAAAAAAAAAoAPv/AQAAAAAAAAApAPv/AQAAAAAAAAAqAPv/AQAAAAAAAAAtAPz/AQAAAAAAAAAuAP3/AQAAAAAAAAAvAP7/AQAAAAAAAAAwAP7/AQAAAAAAAAAxAP7/AQAAAAAAAAAuAP7/AQADAAAAAAAtAP3/AQADAAAAAAApAPz/AQADAAAAAAAoAPz/AQADAAAAAAAnAPz/AQADAAAAAAAqAPz/AQADAAAAAAAkAPv/AQADAAAAAAAjAPv/AQADAAAAAAAiAPv/AQADAAAAAAAvAP//AQADAAAAAAAwAP//AQADAAAAAAAxAP//AQADAAAAAAA=")
 tile_set = ExtResource("3")
 
-[node name="Killzone" type="Area2D" parent="."]
+[node name="Killzone" type="Area2D" parent="." unique_id=836192692]
 position = Vector2(576, 700)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=608431882]
+position = Vector2(1275.5, 0)
 shape = SubResource("106")
 
-[node name="Player" parent="." instance=ExtResource("1")]
-position = Vector2(160, 88)
+[node name="Player" parent="." unique_id=1533258636 instance=ExtResource("1")]
+position = Vector2(576, -324)
 
-[node name="Enemy" parent="." instance=ExtResource("4")]
-position = Vector2(768, 200)
+[node name="Enemy" parent="." unique_id=211181978 instance=ExtResource("4")]
+position = Vector2(1421, -324)
 
-[node name="AmmoCrate" parent="." instance=ExtResource("5")]
-position = Vector2(448, 226)
+[node name="Enemy2" parent="." unique_id=687111234 instance=ExtResource("4")]
+position = Vector2(1198, -704)
 
-[node name="KeyCrate" parent="." instance=ExtResource("5")]
-position = Vector2(800, 290)
+[node name="Enemy3" parent="." unique_id=259134378 instance=ExtResource("4")]
+position = Vector2(1249, -1225)
+
+[node name="AmmoCrate" parent="." unique_id=1281047378 instance=ExtResource("5")]
+position = Vector2(1657, -352)
+
+[node name="AmmoCrate2" parent="." unique_id=175247379 instance=ExtResource("5")]
+position = Vector2(1661, -609)
+
+[node name="AmmoCrate3" parent="." unique_id=1695999433 instance=ExtResource("5")]
+position = Vector2(822, -1056)
+
+[node name="KeyCrate" parent="." unique_id=219208171 instance=ExtResource("5")]
+position = Vector2(3128, -160)
 crate_type = 1
 
-[node name="ExitDoor" parent="." instance=ExtResource("6")]
-position = Vector2(960, 480)
+[node name="ExitDoor" parent="." unique_id=1914462527 instance=ExtResource("6")]
+position = Vector2(1849, -1248)
 
-[node name="HUD" parent="." instance=ExtResource("7")]
+[node name="HUD" parent="." unique_id=1309753956 instance=ExtResource("7")]
 
-[node name="TouchControls" parent="." instance=ExtResource("9")]
+[node name="TouchControls" parent="." unique_id=838704053 instance=ExtResource("9")]
 
-[node name="WinScreen" type="CanvasLayer" parent="."]
+[node name="WinScreen" type="CanvasLayer" parent="." unique_id=1225589679]
 visible = false
 
-[node name="Label" type="Label" parent="WinScreen"]
+[node name="Label" type="Label" parent="WinScreen" unique_id=138815910]
 offset_left = 200.0
 offset_top = 250.0
 offset_right = 950.0
 offset_bottom = 400.0
+theme_override_font_sizes/font_size = 72
 text = "LEVEL CLEAR!"
 horizontal_alignment = 1
-theme_override_font_sizes/font_size = 72
