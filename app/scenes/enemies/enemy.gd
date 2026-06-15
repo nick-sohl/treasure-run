@@ -7,7 +7,7 @@ signal died
 
 var direction := 1.0
 
-@onready var sprite: Sprite2D = $Sprite2D
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var edge_ray: RayCast2D = $EdgeRay
 
 func _ready() -> void:
@@ -28,7 +28,7 @@ func _physics_process(delta: float) -> void:
 func _reverse() -> void:
 	direction *= -1.0
 	sprite.flip_h = direction < 0.0
-	edge_ray.position.x = 30.0 * direction
+	edge_ray.position.x = 10.0 * direction
 
 func _check_player_contact() -> void:
 	for i in get_slide_collision_count():
@@ -40,3 +40,14 @@ func _check_player_contact() -> void:
 func die() -> void:
 	died.emit()
 	queue_free()
+
+func _update_animation() -> void:
+	if not is_on_floor():
+		if velocity.y < 0.0:
+			sprite.play("jump")
+		else:
+			sprite.play("fall")
+	elif velocity.x != 0.0:
+		sprite.play("walk")
+	else:
+		sprite.play("idle")

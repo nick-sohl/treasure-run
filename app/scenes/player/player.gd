@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-const SPEED = 300.0
-const JUMP_FORCE = 450.0
-const GRAVITY = 980.0
+const SPEED = 130.0
+const JUMP_FORCE = 330.0
+const GRAVITY = 800.0
 const START_AMMO = 5
 
 const BULLET_SCENE = preload("res://scenes/items/Bullet.tscn")
@@ -42,7 +42,7 @@ func _shoot() -> void:
 	var bullet = BULLET_SCENE.instantiate()
 	var dir := -1.0 if sprite.flip_h else 1.0
 	bullet.direction = dir
-	bullet.global_position = global_position + Vector2(40.0 * dir, -20.0)
+	bullet.global_position = global_position + Vector2(12.0 * dir, -6.0)
 	get_tree().current_scene.call_deferred("add_child", bullet)
 
 func collect_key() -> void:
@@ -54,11 +54,14 @@ func collect_ammo(amount: int) -> void:
 	ammo_changed.emit(ammo)
 
 func die() -> void:
-	get_tree().reload_current_scene()
+	get_tree().call_deferred("reload_current_scene")
 
 func _update_animation(direction: float) -> void:
 	if not is_on_floor():
-		sprite.play("jump")
+		if velocity.y < 0.0:
+			sprite.play("jump")
+		else:
+			sprite.play("fall")
 	elif direction != 0.0:
 		sprite.play("walk")
 		sprite.flip_h = direction < 0.0

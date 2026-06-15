@@ -1,5 +1,7 @@
 extends Node2D
 
+@export_file("*.tscn") var next_level_path: String
+
 var enemies_alive := 0
 var enemies_total := 0
 
@@ -37,6 +39,8 @@ func _check_win_condition() -> void:
 		exit_door.open()
 
 func _on_exit_entered() -> void:
-	win_screen.visible = true
-	await get_tree().create_timer(3.0).timeout
-	get_tree().reload_current_scene()
+	if next_level_path != null and next_level_path != "":
+		get_tree().call_deferred("change_scene_to_file", next_level_path)
+	else:
+		win_screen.visible = true
+		get_tree().paused = true

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbr01ynyas47s"
-path="res://.godot/imported/platformPack_tilesheet.png-0ad0ce90ce63646f4df9b04325212362.ctex"
+uid="uid://b0jpwsc2lhnav"
+path="res://.godot/imported/enemy_walk_spritesheet.png-72f341eefe1587ff636fc5ec563cb86c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tiles/platformPack_tilesheet.png"
-dest_files=["res://.godot/imported/platformPack_tilesheet.png-0ad0ce90ce63646f4df9b04325212362.ctex"]
+source_file="res://assets/sprites/enemy_walk_spritesheet.png"
+dest_files=["res://.godot/imported/enemy_walk_spritesheet.png-72f341eefe1587ff636fc5ec563cb86c.ctex"]
 
 [params]
 
