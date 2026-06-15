@@ -43,4 +43,5 @@ func _on_exit_entered() -> void:
 		get_tree().call_deferred("change_scene_to_file", next_level_path)
 	else:
 		win_screen.visible = true
-		get_tree().paused = true
+		await get_tree().create_timer(10.0).timeout
+		get_tree().change_scene_to_file("res://scenes/level/Level.tscn")
