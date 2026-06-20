@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://cbiaewjhwh0dq"]
+
+[ext_resource type="Script" uid="uid://bw5y88nfns6o3" path="res://scenes/ui/main_menu.gd" id="1_iwbf0"]
+
+[node name="MainMenu" type="Control" unique_id=1875796054]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iwbf0")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1786334209]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1996026279]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1172356542]
+layout_mode = 2
+text = "Welcome to Treasure Run!"
+horizontal_alignment = 1
+
+[node name="StartButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=2142070904]
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 2
+text = "Start"

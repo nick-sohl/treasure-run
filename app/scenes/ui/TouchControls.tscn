@@ -28,11 +28,11 @@ offset_right = 40.0
 grow_vertical = 0
 
 [node name="PosLeft" type="RemoteTransform2D" parent="Control/CornerLeft" unique_id=1180683617]
-position = Vector2(60, -120)
+position = Vector2(110, -170)
 remote_path = NodePath("../../../BtnLeft")
 
 [node name="PosRight" type="RemoteTransform2D" parent="Control/CornerLeft" unique_id=504120943]
-position = Vector2(240, -120)
+position = Vector2(360, -170)
 remote_path = NodePath("../../../BtnRight")
 
 [node name="CornerRight" type="Control" parent="Control" unique_id=1148400744]
@@ -48,35 +48,43 @@ grow_horizontal = 0
 grow_vertical = 0
 
 [node name="PosJump" type="RemoteTransform2D" parent="Control/CornerRight" unique_id=792814169]
-position = Vector2(-185, -235)
+position = Vector2(-300, -340)
 remote_path = NodePath("../../../BtnJump")
 
 [node name="PosShoot" type="RemoteTransform2D" parent="Control/CornerRight" unique_id=1262362146]
-position = Vector2(-125, -120)
+position = Vector2(-175, -170)
 remote_path = NodePath("../../../BtnShoot")
 
 [node name="BtnLeft" type="TouchScreenButton" parent="." unique_id=1787447887]
-position = Vector2(60, 488)
+modulate = Color(0.49995556, 0.49995556, 0.49995556, 0.5)
+position = Vector2(110, 438)
+scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("1")
 shape = SubResource("5")
 passby_press = true
 action = "move_left"
 
 [node name="BtnRight" type="TouchScreenButton" parent="." unique_id=1430834429]
-position = Vector2(240, 488)
+modulate = Color(0.4977886, 0.4977886, 0.4977886, 0.5)
+position = Vector2(360, 438)
+scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("2")
 shape = SubResource("5")
 passby_press = true
 action = "move_right"
 
 [node name="BtnJump" type="TouchScreenButton" parent="." unique_id=310797247]
-position = Vector2(927, 373)
+modulate = Color(0.4977886, 0.4977886, 0.4977886, 0.5)
+position = Vector2(812, 268)
+scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("3")
 shape = SubResource("5")
 action = "jump"
 
 [node name="BtnShoot" type="TouchScreenButton" parent="." unique_id=1732895120]
-position = Vector2(987, 488)
+modulate = Color(0.4977886, 0.4977886, 0.4977886, 0.5)
+position = Vector2(937, 438)
+scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("4")
 shape = SubResource("5")
 action = "shoot"

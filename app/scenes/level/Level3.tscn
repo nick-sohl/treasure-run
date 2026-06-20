@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cjte16oqsp566" path="res://scenes/items/Crate.tscn" id="7_pa6y2"]
 [ext_resource type="PackedScene" uid="uid://ovr15quhb0jo" path="res://scenes/level/ExitDoor.tscn" id="8_s6x8t"]
 [ext_resource type="PackedScene" path="res://scenes/ui/HUD.tscn" id="9_6xi5n"]
-[ext_resource type="PackedScene" path="res://scenes/ui/TouchControls.tscn" id="10_ijd2e"]
+[ext_resource type="PackedScene" uid="uid://b6weecjwias4b" path="res://scenes/ui/TouchControls.tscn" id="10_ijd2e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0gguh"]
 texture = ExtResource("2_eorvr")
@@ -540,19 +540,6 @@ position = Vector2(3350, -283)
 [node name="HUD" parent="." unique_id=1309753956 instance=ExtResource("9_6xi5n")]
 
 [node name="TouchControls" parent="." unique_id=838704053 instance=ExtResource("10_ijd2e")]
-
-[node name="WinScreen" type="CanvasLayer" parent="." unique_id=1225589679]
-visible = false
-
-[node name="Label" type="Label" parent="WinScreen" unique_id=138815910]
-offset_left = 200.0
-offset_top = 250.0
-offset_right = 950.0
-offset_bottom = 400.0
-theme_override_font_sizes/font_size = 72
-text = "GLÜCKWUNSCH!
-ALLE LEVELS GESCHAFFT!"
-horizontal_alignment = 1
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=22939656]
 
